@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
 function GithubUserSearch() {
-    const [username, setUsername] = useState(''); // Waxaa laga dhigay madhan bilowga
-    const [searchTerm, setSearchTerm] = useState(''); // Waxaa laga dhigay madhan bilowga
+    const [username, setUsername] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        if (!searchTerm) return; // Haddii uusan jirin magaca la geliyay, waxba ha soo jiidin
+        if (!searchTerm) return;
 
         const fetchUser = async () => {
             setLoading(true);
@@ -33,7 +33,7 @@ function GithubUserSearch() {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        if (!username.trim()) return; // Hubi inaysan madhnayn meesha la qoray
+        if (!username.trim()) return;
         setSearchTerm(username);
     };
 
